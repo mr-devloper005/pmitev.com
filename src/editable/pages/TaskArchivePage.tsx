@@ -56,17 +56,16 @@ function pageHref(basePath: string, category: string, page: number) {
 }
 
 const taskGrid: Record<TaskKey, string> = {
-  article: 'grid gap-7 md:grid-cols-2 xl:grid-cols-3',
+  article: 'grid gap-7 lg:grid-cols-2 2xl:grid-cols-3',
   listing: 'grid gap-5 xl:grid-cols-2',
   classified: 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3',
-  image: 'columns-1 gap-5 [column-fill:_balance] sm:columns-2 xl:columns-3',
+  image: 'columns-1 gap-5 [column-fill:_balance] sm:columns-2 2xl:columns-4',
   sbm: 'grid gap-5 md:grid-cols-2 xl:grid-cols-3',
   pdf: 'grid gap-5 md:grid-cols-2 xl:grid-cols-3',
-  profile: 'grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
+  profile: 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4',
 }
 
-// Shared premium surface: hairline border, soft radius, smooth lift on hover.
-const cardBase = 'group block rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-[var(--tk-surface)] transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_32px_72px_rgba(15,23,42,0.14)]'
+const cardBase = 'group block rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-[var(--tk-surface)] backdrop-blur-sm transition duration-500 hover:-translate-y-1.5 hover:shadow-[0_32px_90px_rgba(0,0,0,0.32)]'
 
 export async function EditableTaskArchiveRoute({
   task,
