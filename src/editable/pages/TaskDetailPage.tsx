@@ -194,14 +194,14 @@ function ArticleDetail({ post, related, comments }: { post: SitePost; related: S
   const images = getImages(post)
   return (
     <>
-      <article className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+      <article className="mx-auto max-w-5xl px-6 py-14 sm:py-20 lg:px-10">
         <BackLink task="article" />
         <p className="mt-10 text-xs font-medium uppercase tracking-[0.28em] text-[var(--tk-accent)]">{categoryOf(post, 'Article')}</p>
-        <h1 className="editable-display mt-5 text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.03em] sm:text-5xl lg:text-[3.4rem]">{post.title}</h1>
+        <h1 className="editable-display mt-5 text-balance text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-[var(--slot4-cream)] sm:text-5xl lg:text-[4.4rem]">{post.title}</h1>
         <div className="mt-6 text-sm text-[var(--tk-muted)]">
           <span>{SITE_CONFIG.name}</span>
         </div>
-        {images[0] ? <img src={images[0]} alt="" className="mt-10 aspect-[16/9] w-full rounded-[var(--tk-radius)] border border-[var(--tk-line)] object-cover" /> : null}
+        {images[0] ? <img src={images[0]} alt="" className="mt-10 aspect-[16/9] w-full rounded-[var(--tk-radius)] border border-[var(--tk-line)] object-cover shadow-[0_30px_80px_rgba(0,0,0,0.28)]" /> : null}
         <BodyContent post={post} />
         <EditableArticleComments slug={post.slug} comments={comments} />
       </article>
