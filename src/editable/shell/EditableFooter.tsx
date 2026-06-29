@@ -1,10 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, Camera, Compass, Layers3, Sparkles } from 'lucide-react'
+import { Camera, Compass, Layers3, Sparkles, type LucideIcon } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { globalContent } from '@/editable/content/global.content'
 import { useEditableLocalAuthSession } from '@/editable/components/EditableLocalAuthForms'
+
+const footerHighlights: Array<{ label: string; icon: LucideIcon }> = [
+  { label: 'Image-led', icon: Camera },
+  { label: 'Refined discovery', icon: Compass },
+  { label: 'Curated sections', icon: Layers3 },
+]
 
 export function EditableFooter() {
   const taskLinks = SITE_CONFIG.tasks.filter((task) => task.enabled && task.key !== 'image' && task.key !== 'profile')
@@ -26,12 +32,7 @@ export function EditableFooter() {
               {globalContent.footer?.description || SITE_CONFIG.description}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {[
-                ['Image-led', Camera],
-                ['Refined discovery', Compass],
-                ['Curated sections', Layers3],
-              ].map(([label, Icon]) => {
-                const ItemIcon = Icon as typeof Camera
+              {footerHighlights.map(({ label, icon: ItemIcon }) => {
                 return (
                   <span key={label} className="inline-flex items-center gap-2 rounded-full border border-[var(--editable-border)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--slot4-muted-text)]">
                     <ItemIcon className="h-3.5 w-3.5 text-[var(--slot4-accent)]" /> {label}

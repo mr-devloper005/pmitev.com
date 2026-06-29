@@ -44,7 +44,7 @@ export function TaskEmptyState({ taskLabel = 'posts', className }: { taskLabel?:
   return (
     <EmptyState
       className={className}
-      title={`No ${taskLabel} available right now`}
+      title={`No ${taskLabel} available yet`}
       description={`Published ${taskLabel} from the existing feed will appear here automatically. The layout stays ready even when the source is temporarily empty.`}
       actionLabel="Explore the site"
       actionHref="/"
