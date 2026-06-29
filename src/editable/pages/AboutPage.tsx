@@ -1,6 +1,7 @@
 import { SITE_CONFIG } from '@/lib/site-config'
 import { pagesContent } from '@/editable/content/pages.content'
 import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
+import { Ads } from '@/lib/ads'
 
 export default function AboutPage() {
   return (
@@ -25,6 +26,13 @@ export default function AboutPage() {
           </aside>
         </section>
       </main>
+      <div className="px-4 pb-14 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-[var(--editable-container)] justify-end">
+          <div className="w-full max-w-[336px] rounded-sm border border-[var(--editable-border)] bg-[var(--slot4-panel-bg)] p-4">
+            <Ads slot="sidebar" size="mpu" showLabel eager className="mx-auto w-full" />
+          </div>
+        </div>
+      </div>
     </EditableSiteShell>
   )
 }
